@@ -68,6 +68,7 @@ public class Server {
                             // If the command is to change username, change the username.
                             this.username = value;
                         }
+
                         // Join command, automatically is sent upon joining and can only run once per user.
                         if(command.equals("joined") && !this.joined){
                             this.joined = true;
@@ -79,6 +80,7 @@ public class Server {
                             // TODO: Rolls options
                             broadcast(this.username + " rolls " + Math.round((Math.floor(Math.random()*100))+1) + " (1-100)");
                         }
+
                     } else {
                         // If not a command, it's a message. Send the message to all users.
                         send("[" + this.username + "] " + input);
